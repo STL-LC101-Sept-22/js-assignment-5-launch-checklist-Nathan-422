@@ -26,7 +26,6 @@ async function myFetch() {
   }
   
 function pickPlanet(planets) {
-    
     return planets[Math.floor(Math.random() * planets.length)]
 }
 
@@ -93,10 +92,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             const launchMessage = document.getElementById("launchStatus")
             if (fuelReady && cargoReady) {
                 launchMessage.innerHTML = "Shuttle is Ready for Launch"
-                launchMessage.style.color = "green"
+                launchMessage.style.color = "rgb(65, 159, 106)"
             } else {
                 launchMessage.innerHTML = "Shuttle Not Ready for Launch"
-                launchMessage.style.color = "red"
+                launchMessage.style.color = "rgb(199, 37, 78)"
             }
 
             list.style.visibility = "visible"

@@ -22,6 +22,9 @@ window.addEventListener("load", function () {
     );
   });
 
+  // problem solving code
+  document.getElementById("faultyItems").style.visibility = "hidden";
+
   const form = document.querySelector("form[data-testid='testForm']");
 
   form.addEventListener("submit", function (event) {
