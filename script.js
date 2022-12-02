@@ -1,13 +1,16 @@
 // import {formSubmission} from "./scriptHelper"
 
-console.log("Scripts working");
-
 window.addEventListener("load", function () {
   console.log("Page loaded");
-  let listedPlanets;
-  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+
+
+  // console.log(myFetch())
+  
 
   /*
+  let listedPlanets;
+  Set listedPlanetsResponse equal to the value returned by calling myFetch()
+
   let listedPlanetsResponse;
   listedPlanetsResponse
     .then(function (result) {
