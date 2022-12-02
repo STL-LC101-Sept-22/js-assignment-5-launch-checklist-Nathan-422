@@ -18,11 +18,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 function validateInput(testInput) {
   if (testInput === "") {
-    return "Empty";
+    return "Empty"
   } else if (isNaN(testInput)) {
-    return "Not a Number";
+    return "Not a Number"
   } else {
-    return "Is a Number";
+    return "Is a Number"
   }
 }
 
@@ -56,10 +56,29 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             const olFuelElement = document.getElementById("fuelStatus")
             const olCargoElement = document.getElementById("cargoStatus")
 
-            olPilotElement.innerHTML = "Hello"
-            olCopilotElement.innerHTML = "there."
-            olFuelElement.innerHTML = "General"
-            olCargoElement.innerHTML = "Konobi."
+
+            olPilotElement.innerHTML = `Pilot ${pilot} is ready for launch`
+            olCopilotElement.innerHTML = `Co-pilot ${copilot} is ready for launch`
+
+            const fuelReady = fuelLevel >= 10000
+            const fuelMessage = fuelReady ? 
+            "Fuel level high enough for launch" : "Fuel level too low for launch"
+            olFuelElement.innerHTML = fuelMessage
+            
+            
+            const cargoReady = cargoLevel <= 10000
+            const cargoMessage = cargoReady ? 
+            "Cargo mass low enough for launch" : "Cargo mass too heavy for launch"
+            olCargoElement.innerHTML = cargoMessage
+
+            const launchMessage = document.getElementById("launchStatus")
+            if (fuelReady && cargoReady) {
+                launchMessage.innerHTML = "Shuttle is Ready for Launch"
+                launchMessage.style.color = "green"
+            } else {
+                launchMessage.innerHTML = "Shuttle Not Ready for Launch"
+                launchMessage.style.color = "red"
+            }
 
             list.style.visibility = "visible"
 
