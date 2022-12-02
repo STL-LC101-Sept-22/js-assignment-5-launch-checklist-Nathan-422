@@ -21,12 +21,13 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 async function myFetch() {
     let response = await fetch("https://handlers.education.launchcode.org/static/planets.json")
     let planetsReturned = await response.json();
-    
+
     return planetsReturned
   }
   
 function pickPlanet(planets) {
-    return planets[Math.floor(Math.random * planets.length)]
+    
+    return planets[Math.floor(Math.random() * planets.length)]
 }
 
 
