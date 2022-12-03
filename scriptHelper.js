@@ -1,4 +1,10 @@
-// Write your helper functions here!
+/**
+ * Author: Nathan Wright
+ * Class: lc_101
+ * Section: Sept 2022
+ * Instructor: Carrie Jones
+ */
+
 require("isomorphic-fetch");
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
