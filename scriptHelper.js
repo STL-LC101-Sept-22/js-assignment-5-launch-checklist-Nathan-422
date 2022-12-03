@@ -25,10 +25,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 async function myFetch() {
-    let response = await fetch("https://handlers.education.launchcode.org/static/planets.json")
-    let planetsReturned = await response.json();
+    let planetsReturned;
 
-    return planetsReturned
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json")
+    .then( function(response) {
+        return response.json();
+    });
+    
+    return planetsReturned;
   }
   
 function pickPlanet(planets) {
@@ -50,8 +54,7 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-  console.log(list.lastElementChild)
-
+  
   const pilotCheck = validateInput(pilot) 
   const copilotCheck = validateInput(copilot) 
   const fuelCheck =  validateInput(fuelLevel) 

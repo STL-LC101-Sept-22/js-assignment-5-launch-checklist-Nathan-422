@@ -9,12 +9,12 @@ window.addEventListener("load", function () {
 
   let listedPlanets;
   let listedPlanetsResponse = myFetch();
-  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+
+  console.log(listedPlanetsResponse)
 
   listedPlanetsResponse.then(function (result) {
     listedPlanets = result;
     const planet = pickPlanet(listedPlanets);
-    // console.log(planet);
     addDestinationInfo(
       document,
       planet.name,
@@ -40,20 +40,6 @@ window.addEventListener("load", function () {
     const fuelLevel = document.querySelector("input[name='fuelLevel']").value;
     const cargoMass = document.querySelector("input[name='cargoMass']").value;
 
-    // check for all forms to have a value
     formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
-
-    // TODO: verify inputs are correct values
-
-    // TODO: set html elements with status
-
-    console.log(
-      `Pilot: ${pilotName}
-Co-pilot: ${copilotName}
-Fuel: ${fuelLevel}
-Mass: ${cargoMass}`
-    );
-
-    // TODO:
   });
 });
