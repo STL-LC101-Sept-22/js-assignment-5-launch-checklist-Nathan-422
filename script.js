@@ -5,13 +5,14 @@
  * Instructor: Carrie Jones
  */
 
-import helpers from 'scriptHelper.js';
+// imports break script apparently. Look up module.exports.functionName = functionName;
+// import { addDestinationInfo, formSubmission, myFetch, pickPlanet,  } from 'scriptHelper.js';
 
  window.addEventListener("load", function () {
 
   let listedPlanets;
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-  let listedPlanetsResponse = helpers.myFetch();
+  let listedPlanetsResponse = myFetch();
 
   listedPlanetsResponse.then(function (result) {
       listedPlanets = result;
@@ -19,8 +20,8 @@ import helpers from 'scriptHelper.js';
   }).then(function () {
       // console.log(listedPlanets);
       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-      const planet = helpers.pickPlanet(listedPlanets);
-      helpers.addDestinationInfo(
+      const planet = pickPlanet(listedPlanets);
+      addDestinationInfo(
         document,
         planet.name,
         planet.diameter,
@@ -45,6 +46,6 @@ import helpers from 'scriptHelper.js';
     const fuelLevel = document.querySelector("input[name='fuelLevel']").value;
     const cargoMass = document.querySelector("input[name='cargoMass']").value;
 
-    helpers.formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
+    formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
   });
 });
