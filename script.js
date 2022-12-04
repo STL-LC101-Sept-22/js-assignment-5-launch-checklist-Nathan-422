@@ -5,11 +5,13 @@
  * Instructor: Carrie Jones
  */
 
+import helpers from 'scriptHelper.js';
+
  window.addEventListener("load", function () {
 
   let listedPlanets;
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-  let listedPlanetsResponse = myFetch();
+  let listedPlanetsResponse = helpers.myFetch();
 
   listedPlanetsResponse.then(function (result) {
       listedPlanets = result;
@@ -17,8 +19,8 @@
   }).then(function () {
       // console.log(listedPlanets);
       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-      const planet = pickPlanet(listedPlanets);
-      addDestinationInfo(
+      const planet = helpers.pickPlanet(listedPlanets);
+      helpers.addDestinationInfo(
         document,
         planet.name,
         planet.diameter,
@@ -28,10 +30,6 @@
         planet.image
         );
   })
-
-  // listedPlanetsResponse.then(function (result) {
-  //   console.log(result.json())
-  // });
 
   // problem solving code
   document.getElementById("faultyItems").style.visibility = "hidden";
@@ -47,6 +45,6 @@
     const fuelLevel = document.querySelector("input[name='fuelLevel']").value;
     const cargoMass = document.querySelector("input[name='cargoMass']").value;
 
-    formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
+    helpers.formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
   });
 });
