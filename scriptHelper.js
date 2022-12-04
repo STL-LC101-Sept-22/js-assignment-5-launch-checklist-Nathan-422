@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 /**
  * Author: Nathan Wright
  * Class: lc_101
